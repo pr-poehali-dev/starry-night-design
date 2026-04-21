@@ -135,56 +135,56 @@ export const Hero3DWebGL = () => {
         <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-[hsl(214,60%,5%)] to-transparent" />
       </div>
 
-      <div className="h-screen items-center w-full absolute z-[60] pointer-events-none px-6 md:px-10 flex justify-center flex-col">
-        <div className="text-center max-w-4xl mx-auto">
+      <div className="h-screen items-center w-full absolute z-[60] pointer-events-none px-4 sm:px-6 md:px-10 flex justify-center flex-col">
+        <div className="text-center max-w-4xl mx-auto w-full">
           <div
-            className={`font-geist text-sm md:text-base text-amber-400 font-semibold tracking-widest uppercase mb-4 transition-all duration-700 ${phase >= 1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`font-geist text-xs sm:text-sm md:text-base text-amber-400 font-semibold tracking-widest uppercase mb-3 sm:mb-4 transition-all duration-700 ${phase >= 1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
             Казань · КФУ · Открыт с 2025 года
           </div>
 
           <div
-            className={`font-orbitron text-2xl md:text-4xl xl:text-5xl font-bold text-white leading-tight mb-1 transition-all duration-700 ${phase >= 2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`font-orbitron text-xl sm:text-2xl md:text-4xl xl:text-5xl font-bold text-white leading-tight mb-1 text-balance transition-all duration-700 ${phase >= 2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
             {titleLine1}
           </div>
           <div
-            className={`font-orbitron text-2xl md:text-4xl xl:text-5xl font-bold text-white leading-tight mb-2 transition-all duration-700 delay-100 ${phase >= 2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`font-orbitron text-xl sm:text-2xl md:text-4xl xl:text-5xl font-bold text-white leading-tight mb-2 text-balance transition-all duration-700 delay-100 ${phase >= 2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
             {titleLine2}
           </div>
           <div
-            className={`font-orbitron text-3xl md:text-5xl xl:text-6xl font-extrabold text-amber-400 mb-6 transition-all duration-700 delay-200 ${phase >= 3 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`font-orbitron text-2xl sm:text-3xl md:text-5xl xl:text-6xl font-extrabold text-amber-400 mb-4 sm:mb-6 transition-all duration-700 delay-200 ${phase >= 3 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
             {museumName}
           </div>
 
           <div
-            className={`font-geist text-lg md:text-2xl text-blue-100/80 font-light tracking-wide mb-10 transition-all duration-700 ${phase >= 3 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`font-geist text-base sm:text-lg md:text-2xl text-blue-100/80 font-light tracking-wide mb-7 sm:mb-10 transition-all duration-700 ${phase >= 3 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
             {subtitle}
           </div>
 
           <div
-            className={`flex flex-col sm:flex-row gap-4 justify-center pointer-events-auto transition-all duration-700 ${phase >= 4 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pointer-events-auto transition-all duration-700 ${phase >= 4 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
             <Button
               size="lg"
-              className="bg-amber-500 hover:bg-amber-400 text-[hsl(214,60%,5%)] font-geist font-bold text-lg px-8 pulse-button"
+              className="bg-amber-500 hover:bg-amber-400 text-[hsl(214,60%,5%)] font-geist font-bold text-base sm:text-lg px-6 sm:px-8 pulse-button"
             >
               Посетить бесплатно
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-white/30 text-white hover:bg-white/10 hover:text-white font-geist text-lg px-8 bg-transparent"
+              className="border-white/30 text-white hover:bg-white/10 hover:text-white font-geist text-base sm:text-lg px-6 sm:px-8 bg-transparent"
             >
               Об экспозиции
             </Button>
           </div>
 
           <div
-            className={`mt-8 flex flex-wrap justify-center gap-6 text-sm text-blue-200/60 font-geist transition-all duration-700 ${phase >= 4 ? "opacity-100" : "opacity-0"}`}
+            className={`mt-5 sm:mt-8 flex flex-wrap justify-center gap-3 sm:gap-6 text-xs sm:text-sm text-blue-200/60 font-geist transition-all duration-700 ${phase >= 4 ? "opacity-100" : "opacity-0"}`}
           >
             <span>✦ Вход бесплатный</span>
             <span>✦ Экскурсии бесплатные</span>

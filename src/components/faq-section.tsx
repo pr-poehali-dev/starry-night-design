@@ -37,10 +37,10 @@ export function FAQSection() {
   return (
     <section id="faq" className="py-24 bg-[hsl(214,60%,5%)]">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <p className="text-amber-500 font-geist font-semibold tracking-widest uppercase text-sm mb-3">FAQ</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-orbitron">Частые вопросы</h2>
-          <p className="text-xl text-blue-100/70 max-w-3xl mx-auto font-geist">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 font-orbitron">Частые вопросы</h2>
+          <p className="text-base sm:text-xl text-blue-100/70 max-w-3xl mx-auto font-geist">
             Всё, что нужно знать перед визитом в музей «Белем»
           </p>
         </div>
@@ -49,7 +49,7 @@ export function FAQSection() {
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="border-amber-500/20 mb-4">
-                <AccordionTrigger className="text-left text-lg font-semibold text-white hover:text-amber-400 font-geist px-6 py-4">
+                <AccordionTrigger className="text-left text-base sm:text-lg font-semibold text-white hover:text-amber-400 font-geist px-4 sm:px-6 py-4">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-blue-100/70 leading-relaxed px-6 pb-4 font-geist">

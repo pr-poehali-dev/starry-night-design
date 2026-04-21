@@ -107,12 +107,12 @@ export function ApplicationsTimeline() {
   return (
     <section id="applications" className="py-20 bg-[hsl(214,60%,5%)]">
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <p className="text-amber-500 font-geist font-semibold tracking-widest uppercase text-sm mb-3">История</p>
-          <h2 className="font-orbitron text-3xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="font-orbitron text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
             Восемь веков просвещения
           </h2>
-          <p className="text-blue-100/70 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-geist">
+          <p className="text-blue-100/70 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-geist">
             Музей «Белем» хранит непрерывную историю образования татарского народа — от средневековых
             медресе до современных цифровых технологий.
           </p>

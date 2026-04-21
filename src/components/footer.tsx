@@ -4,8 +4,8 @@ export function Footer() {
   return (
     <footer className="bg-[hsl(214,60%,3%)] border-t border-amber-500/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="col-span-1 md:col-span-2">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+          <div className="col-span-2 md:col-span-2">
             <h2 className="font-orbitron text-2xl font-bold text-white mb-1">
               Музей <span className="text-amber-400">«Белем»</span>
             </h2>

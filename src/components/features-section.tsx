@@ -44,15 +44,15 @@ export function FeaturesSection() {
   return (
     <section id="exposition" className="py-24 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <p className="text-amber-500 font-geist font-semibold tracking-widest uppercase text-sm mb-3">Экспозиция</p>
-          <h2 className="text-4xl font-bold text-foreground mb-4 font-orbitron">Что вы увидите в музее</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-geist">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 font-orbitron">Что вы увидите в музее</h2>
+          <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-geist">
             Путешествие сквозь века — от средневековых медресе до цифровой школы будущего
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {features.map((feature, index) => (
             <Card
               key={index}

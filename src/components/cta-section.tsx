@@ -8,10 +8,10 @@ export function CTASection() {
           <p className="text-amber-500 font-geist font-semibold tracking-widest uppercase text-sm mb-4">
             Приходите в гости
           </p>
-          <h2 className="text-5xl font-bold text-white mb-6 font-orbitron text-balance">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 font-orbitron text-balance">
             Откройте для себя восемь веков знаний
           </h2>
-          <p className="text-xl text-blue-100/70 mb-4 leading-relaxed max-w-2xl mx-auto font-geist">
+          <p className="text-base sm:text-xl text-blue-100/70 mb-4 leading-relaxed max-w-2xl mx-auto font-geist">
             Музей «Белем» ждёт школьников, студентов, педагогов и всех, кто ценит историю образования.
             Вход, экскурсии и аудиогиды — полностью бесплатны.
           </p>

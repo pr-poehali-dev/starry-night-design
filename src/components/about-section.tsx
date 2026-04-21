@@ -2,12 +2,12 @@ export function AboutSection() {
   return (
     <section id="about" className="py-24 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <p className="text-amber-500 font-geist font-semibold tracking-widest uppercase text-sm mb-3">О музее</p>
-          <h2 className="text-4xl font-bold text-foreground mb-4 font-orbitron">История создания</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 font-orbitron">История создания</h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           <div className="space-y-6">
             <p className="text-muted-foreground text-lg leading-relaxed font-geist">
               Музей «Белем» — первый в Татарстане государственный музей, полностью посвящённый
@@ -25,24 +25,24 @@ export function AboutSection() {
               наследия республики.
             </p>
 
-            <div className="grid grid-cols-3 gap-6 pt-4">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-amber-500 font-orbitron">5000+</div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 pt-4">
+              <div className="text-center bg-card border border-border rounded-xl p-4 sm:p-0 sm:bg-transparent sm:border-0 sm:rounded-none">
+                <div className="text-2xl sm:text-3xl font-bold text-amber-500 font-orbitron">5000+</div>
                 <div className="text-sm text-muted-foreground mt-1 font-geist">экспонатов</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-amber-500 font-orbitron">8+</div>
+              <div className="text-center bg-card border border-border rounded-xl p-4 sm:p-0 sm:bg-transparent sm:border-0 sm:rounded-none">
+                <div className="text-2xl sm:text-3xl font-bold text-amber-500 font-orbitron">8+</div>
                 <div className="text-sm text-muted-foreground mt-1 font-geist">веков истории</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-amber-500 font-orbitron">0 ₽</div>
+              <div className="text-center bg-card border border-border rounded-xl p-4 sm:p-0 sm:bg-transparent sm:border-0 sm:rounded-none">
+                <div className="text-2xl sm:text-3xl font-bold text-amber-500 font-orbitron">0 ₽</div>
                 <div className="text-sm text-muted-foreground mt-1 font-geist">вход бесплатный</div>
               </div>
             </div>
           </div>
 
           <div className="relative">
-            <blockquote className="relative bg-card border border-amber-500/20 rounded-2xl p-8">
+            <blockquote className="relative bg-card border border-amber-500/20 rounded-2xl p-5 sm:p-8">
               <div className="text-amber-500 text-6xl font-orbitron leading-none mb-4">"</div>
               <p className="text-foreground text-lg leading-relaxed font-geist italic mb-6">
                 Учителя формируют наше будущее. Здесь, в нашем самом большом центре по подготовке

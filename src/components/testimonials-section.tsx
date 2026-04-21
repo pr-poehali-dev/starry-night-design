@@ -29,15 +29,15 @@ export function TestimonialsSection() {
   return (
     <section className="py-24 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 sm:mb-16">
           <p className="text-amber-500 font-geist font-semibold tracking-widest uppercase text-sm mb-3">Отзывы</p>
-          <h2 className="text-4xl font-bold text-foreground mb-4 font-orbitron">Говорят посетители</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-geist">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 font-orbitron">Говорят посетители</h2>
+          <p className="text-base sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-geist">
             Живые впечатления тех, кто уже открыл для себя музей «Белем»
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="glow-border slide-up" style={{ animationDelay: `${index * 0.15}s` }}>
               <CardContent className="p-6">
