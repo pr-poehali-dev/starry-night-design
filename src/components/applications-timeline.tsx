@@ -3,75 +3,100 @@ import { Timeline } from "@/components/ui/timeline"
 export function ApplicationsTimeline() {
   const data = [
     {
-      title: "Медицинское восстановление",
+      title: "XII–XVIII века",
       content: (
         <div>
-          <p className="text-white text-sm md:text-base font-normal mb-6 leading-relaxed">
-            Революционное лечение паралича, травм спинного мозга и нейродегенеративных заболеваний. Восстановление
-            моторных функций и независимости миллионам людей по всему миру.
+          <p className="text-blue-100/80 text-sm md:text-base font-normal mb-6 leading-relaxed font-geist">
+            Зарождение образования на территории Волжской Булгарии и Казанского ханства. Медресе как центры знания,
+            арабская письменность, первые рукописные книги на татарском языке.
           </p>
           <div className="space-y-3">
-            <div className="flex items-center gap-3 text-red-400 text-sm">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              Восстановление при тетра- и параплегии
+            <div className="flex items-center gap-3 text-amber-400 text-sm font-geist">
+              <div className="w-2 h-2 bg-amber-500 rounded-full flex-shrink-0"></div>
+              Медресе как главные центры образования
             </div>
-            <div className="flex items-center gap-3 text-red-400 text-sm">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              Контроль симптомов БАС и Паркинсона
+            <div className="flex items-center gap-3 text-amber-400 text-sm font-geist">
+              <div className="w-2 h-2 bg-amber-500 rounded-full flex-shrink-0"></div>
+              Рукописные книги на арабской графике
             </div>
-            <div className="flex items-center gap-3 text-red-400 text-sm">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              Ускорение реабилитации после инсульта
+            <div className="flex items-center gap-3 text-amber-400 text-sm font-geist">
+              <div className="w-2 h-2 bg-amber-500 rounded-full flex-shrink-0"></div>
+              Первые буквари «алифба» для детей
             </div>
           </div>
         </div>
       ),
     },
     {
-      title: "Когнитивное усиление",
+      title: "XIX–начало XX века",
       content: (
         <div>
-          <p className="text-white text-sm md:text-base font-normal mb-6 leading-relaxed">
-            Усиление человеческого интеллекта, памяти и способности к обучению. Прямые нейроинтерфейсы для
-            улучшенной когнитивной производительности и обработки информации.
+          <p className="text-blue-100/80 text-sm md:text-base font-normal mb-6 leading-relaxed font-geist">
+            Эпоха просвещения и реформ. Развитие светского образования, книгоиздание, появление первых учебников
+            на татарском языке. Казань становится культурным центром татарского мира.
           </p>
           <div className="space-y-3">
-            <div className="flex items-center gap-3 text-red-400 text-sm">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              Улучшение памяти и оптимизация запоминания
+            <div className="flex items-center gap-3 text-amber-400 text-sm font-geist">
+              <div className="w-2 h-2 bg-amber-500 rounded-full flex-shrink-0"></div>
+              Зарождение светских школ
             </div>
-            <div className="flex items-center gap-3 text-red-400 text-sm">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              Ускоренное обучение и освоение навыков
+            <div className="flex items-center gap-3 text-amber-400 text-sm font-geist">
+              <div className="w-2 h-2 bg-amber-500 rounded-full flex-shrink-0"></div>
+              Расцвет татарского книгоиздания
             </div>
-            <div className="flex items-center gap-3 text-red-400 text-sm">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              Перевод языков в реальном времени
+            <div className="flex items-center gap-3 text-amber-400 text-sm font-geist">
+              <div className="w-2 h-2 bg-amber-500 rounded-full flex-shrink-0"></div>
+              Педагогические реформы Исмаила Гаспринского
             </div>
           </div>
         </div>
       ),
     },
     {
-      title: "Цифровая интеграция",
+      title: "XX век",
       content: (
         <div>
-          <p className="text-white text-sm md:text-base font-normal mb-6 leading-relaxed">
-            Бесшовное соединение человеческого сознания с цифровыми системами. Управление устройствами,
-            доступ к информации и общение силой мысли.
+          <p className="text-blue-100/80 text-sm md:text-base font-normal mb-6 leading-relaxed font-geist">
+            Советская школа, пионерское движение, массовое образование. Переход на латинскую, затем кириллическую
+            графику. Педагогические династии, формировавшие республику.
           </p>
           <div className="space-y-3">
-            <div className="flex items-center gap-3 text-red-400 text-sm">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              Управление устройствами силой мысли
+            <div className="flex items-center gap-3 text-amber-400 text-sm font-geist">
+              <div className="w-2 h-2 bg-amber-500 rounded-full flex-shrink-0"></div>
+              Всеобщее начальное образование
             </div>
-            <div className="flex items-center gap-3 text-red-400 text-sm">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              Прямой доступ к интернету и облаку
+            <div className="flex items-center gap-3 text-amber-400 text-sm font-geist">
+              <div className="w-2 h-2 bg-amber-500 rounded-full flex-shrink-0"></div>
+              Школьная форма и атрибуты пионерии
             </div>
-            <div className="flex items-center gap-3 text-red-400 text-sm">
-              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-              Телепатические сети связи
+            <div className="flex items-center gap-3 text-amber-400 text-sm font-geist">
+              <div className="w-2 h-2 bg-amber-500 rounded-full flex-shrink-0"></div>
+              Легендарные учителя Татарстана
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Сегодня и завтра",
+      content: (
+        <div>
+          <p className="text-blue-100/80 text-sm md:text-base font-normal mb-6 leading-relaxed font-geist">
+            Цифровая трансформация образования. Интерактивные зоны музея дают возможность заглянуть в будущее:
+            Атлас профессий, тесты профориентации и мультимедийные технологии.
+          </p>
+          <div className="space-y-3">
+            <div className="flex items-center gap-3 text-amber-400 text-sm font-geist">
+              <div className="w-2 h-2 bg-amber-500 rounded-full flex-shrink-0"></div>
+              Интерактивный Атлас профессий будущего
+            </div>
+            <div className="flex items-center gap-3 text-amber-400 text-sm font-geist">
+              <div className="w-2 h-2 bg-amber-500 rounded-full flex-shrink-0"></div>
+              Тест на профориентацию «Трамвай желаний»
+            </div>
+            <div className="flex items-center gap-3 text-amber-400 text-sm font-geist">
+              <div className="w-2 h-2 bg-amber-500 rounded-full flex-shrink-0"></div>
+              Карта педагогических вузов республики
             </div>
           </div>
         </div>
@@ -80,13 +105,16 @@ export function ApplicationsTimeline() {
   ]
 
   return (
-    <section id="applications" className="py-20 bg-black">
+    <section id="applications" className="py-20 bg-[hsl(214,60%,5%)]">
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-10">
         <div className="text-center mb-16">
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-white mb-6">Трансформирующие применения</h2>
-          <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            Технологии SynapseAI открывают беспрецедентные возможности для усиления человека, медицинского
-            лечения и цифровой интеграции в множестве областей.
+          <p className="text-amber-500 font-geist font-semibold tracking-widest uppercase text-sm mb-3">История</p>
+          <h2 className="font-orbitron text-3xl md:text-5xl font-bold text-white mb-6">
+            Восемь веков просвещения
+          </h2>
+          <p className="text-blue-100/70 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-geist">
+            Музей «Белем» хранит непрерывную историю образования татарского народа — от средневековых
+            медресе до современных цифровых технологий.
           </p>
         </div>
 

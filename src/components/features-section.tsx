@@ -3,51 +3,52 @@ import { Badge } from "@/components/ui/badge"
 
 const features = [
   {
-    title: "Адаптивная нейрообработка",
-    description: "Самооптимизирующиеся алгоритмы, которые обучаются на нейронных паттернах и улучшают интерпретацию сигналов.",
-    icon: "brain",
-    badge: "ИИ",
+    title: "Письменность и книги",
+    description: "История татарской письменности с XII века, уникальные рукописи, буквари «алифба», коллекция учебников на русском и татарском языках.",
+    emoji: "📜",
+    badge: "XII–XIX в.",
   },
   {
-    title: "Медицинская защита",
-    description: "Шифрование по стандартам FDA со сквозной защитой конфиденциальных нейронных данных.",
-    icon: "lock",
-    badge: "Сертификат",
+    title: "Эволюция школы",
+    description: "Интерьер дореволюционных медресе, школьная форма 1950-х, атрибуты пионерской организации — живая история образования.",
+    emoji: "🏫",
+    badge: "История",
   },
   {
-    title: "Интуитивное управление",
-    description: "Естественная трансляция мыслей в действия с откликом менее миллисекунды и точностью 99,7%.",
-    icon: "globe",
-    badge: "Точность",
+    title: "Педагогические династии",
+    description: "Документы, награды и личные истории семей, посвятивших поколения педагогическому призванию Татарстана.",
+    emoji: "👨‍👩‍👧‍👦",
+    badge: "Наследие",
   },
   {
-    title: "Предиктивная калибровка",
-    description: "ML-модели, которые предугадывают намерения пользователя и оптимизируют нейронные пути.",
-    icon: "zap",
-    badge: "Умный",
+    title: "Интерактивные зоны",
+    description: "Тест на профориентацию «Трамвай желаний», цифровой Атлас профессий будущего, мультимедийные методические комплексы.",
+    emoji: "🖥️",
+    badge: "Интерактив",
   },
   {
-    title: "Биометрическая интеграция",
-    description: "Бесшовная синхронизация с мониторингом жизненных показателей для контроля здоровья.",
-    icon: "link",
-    badge: "Связь",
+    title: "Награды педагогов",
+    description: "Экспозиция почётных знаков, медалей и орденов, отражающая вклад учителей в историю республики.",
+    emoji: "🏅",
+    badge: "Гордость",
   },
   {
-    title: "Поддержка XR",
-    description: "Нативная совместимость с AR/VR-средами для терапевтических и рабочих приложений.",
-    icon: "target",
-    badge: "XR Ready",
+    title: "Карта учебных заведений",
+    description: "Интерактивная карта всех учебных заведений Республики Татарстан, готовящих педагогов нового поколения.",
+    emoji: "🗺️",
+    badge: "РТ",
   },
 ]
 
 export function FeaturesSection() {
   return (
-    <section className="py-24 px-6 bg-background">
+    <section id="exposition" className="py-24 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4 font-sans">Возможности нового поколения</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Почувствуйте будущее с технологиями, которые переопределяют возможное
+          <p className="text-amber-500 font-geist font-semibold tracking-widest uppercase text-sm mb-3">Экспозиция</p>
+          <h2 className="text-4xl font-bold text-foreground mb-4 font-orbitron">Что вы увидите в музее</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-geist">
+            Путешествие сквозь века — от средневековых медресе до цифровой школы будущего
           </p>
         </div>
 
@@ -60,22 +61,15 @@ export function FeaturesSection() {
             >
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-3xl">
-                    {feature.icon === "brain" && "&#129504;"}
-                    {feature.icon === "lock" && "&#128274;"}
-                    {feature.icon === "globe" && "&#127760;"}
-                    {feature.icon === "zap" && "&#9889;"}
-                    {feature.icon === "link" && "&#128279;"}
-                    {feature.icon === "target" && "&#127919;"}
-                  </span>
-                  <Badge variant="secondary" className="bg-accent text-accent-foreground">
+                  <span className="text-3xl">{feature.emoji}</span>
+                  <Badge variant="secondary" className="bg-accent/20 text-amber-500 border border-amber-500/30">
                     {feature.badge}
                   </Badge>
                 </div>
-                <CardTitle className="text-xl font-bold text-card-foreground">{feature.title}</CardTitle>
+                <CardTitle className="text-xl font-bold text-card-foreground font-orbitron">{feature.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-muted-foreground leading-relaxed">
+                <CardDescription className="text-muted-foreground leading-relaxed font-geist">
                   {feature.description}
                 </CardDescription>
               </CardContent>

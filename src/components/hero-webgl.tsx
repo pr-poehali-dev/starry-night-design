@@ -2,6 +2,7 @@ import { Canvas, extend, useFrame } from "@react-three/fiber"
 import { useAspect, useTexture } from "@react-three/drei"
 import { useMemo, useRef, useState, useEffect } from "react"
 import * as THREE from "three"
+import { Button } from "@/components/ui/button"
 
 const TEXTUREMAP = { src: "https://i.postimg.cc/XYwvXN8D/img-4.png" }
 const DEPTHMAP = { src: "https://i.postimg.cc/2SHKQh2q/raw-4.webp" }
@@ -32,7 +33,6 @@ const Scene = () => {
       uniform float uTime;
       varying vec2 vUv;
 
-      // Simple noise function
       float random(vec2 st) {
         return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123);
       }
@@ -51,15 +51,15 @@ const Scene = () => {
       void main() {
         vec2 uv = vUv;
 
-        // Depth-based displacement
         float depth = texture2D(uDepthMap, uv).r;
         vec2 displacement = depth * uPointer * 0.01;
         vec2 distortedUv = uv + displacement;
 
-        // Base texture
         vec4 baseColor = texture2D(uTexture, distortedUv);
 
-        // Create scanning effect
+        // Apply dark blue tint for museum feel
+        vec3 blueShift = mix(baseColor.rgb, vec3(0.02, 0.08, 0.22), 0.55);
+
         float aspect = ${WIDTH}.0 / ${HEIGHT}.0;
         vec2 tUv = vec2(uv.x * aspect, uv.y);
         vec2 tiling = vec2(120.0);
@@ -69,14 +69,12 @@ const Scene = () => {
         float dist = length(tiledUv);
         float dot = smoothstep(0.5, 0.49, dist) * brightness;
 
-        // Flow effect based on progress
         float flow = 1.0 - smoothstep(0.0, 0.02, abs(depth - uProgress));
 
-        // Red scanning overlay
-        vec3 mask = vec3(dot * flow * 10.0, 0.0, 0.0);
+        // Gold scanning overlay instead of red
+        vec3 mask = vec3(dot * flow * 8.0, dot * flow * 5.5, 0.0);
 
-        // Combine effects
-        vec3 final = baseColor.rgb + mask;
+        vec3 final = blueShift + mask;
 
         gl_FragColor = vec4(final, 1.0);
       }
@@ -114,63 +112,83 @@ const Scene = () => {
 }
 
 export const Hero3DWebGL = () => {
-  const titleWords = "Synapse AI".split(" ")
-  const subtitle = "Нейроинтерфейсы нового поколения."
-  const [visibleWords, setVisibleWords] = useState(0)
-  const [subtitleVisible, setSubtitleVisible] = useState(false)
-  const [delays, setDelays] = useState<number[]>([])
-  const [subtitleDelay, setSubtitleDelay] = useState(0)
+  const titleLine1 = "Музей образования"
+  const titleLine2 = "Республики Татарстан"
+  const museumName = "«Белем»"
+  const subtitle = "Знание. История. Наставничество."
+  const [phase, setPhase] = useState(0)
 
   useEffect(() => {
-    setDelays(titleWords.map(() => Math.random() * 0.07))
-    setSubtitleDelay(Math.random() * 0.1)
-  }, [titleWords.length])
-
-  useEffect(() => {
-    if (visibleWords < titleWords.length) {
-      const timeout = setTimeout(() => setVisibleWords(visibleWords + 1), 600)
-      return () => clearTimeout(timeout)
-    } else {
-      const timeout = setTimeout(() => setSubtitleVisible(true), 800)
-      return () => clearTimeout(timeout)
-    }
-  }, [visibleWords, titleWords.length])
+    const t1 = setTimeout(() => setPhase(1), 400)
+    const t2 = setTimeout(() => setPhase(2), 1000)
+    const t3 = setTimeout(() => setPhase(3), 1600)
+    const t4 = setTimeout(() => setPhase(4), 2200)
+    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearTimeout(t4) }
+  }, [])
 
   return (
-    <div className="h-screen bg-black relative overflow-hidden">
+    <div className="h-screen bg-[hsl(214,60%,5%)] relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none z-10">
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
-        <div className="absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-black to-transparent" />
-        <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-black to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[hsl(214,60%,5%)] to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[hsl(214,60%,5%)] to-transparent" />
+        <div className="absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-[hsl(214,60%,5%)] to-transparent" />
+        <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-[hsl(214,60%,5%)] to-transparent" />
       </div>
 
-      <div className="h-screen uppercase items-center w-full absolute z-[60] pointer-events-none px-10 flex justify-center flex-col">
-        <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron">
-          <div className="flex space-x-2 lg:space-x-6 overflow-hidden text-white">
-            {titleWords.map((word, index) => (
-              <div
-                key={index}
-                className={index < visibleWords ? "fade-in" : ""}
-                style={{
-                  animationDelay: `${index * 0.13 + (delays[index] || 0)}s`,
-                  opacity: index < visibleWords ? undefined : 0,
-                }}
-              >
-                {word}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="text-xs md:text-xl xl:text-2xl 2xl:text-3xl mt-2 overflow-hidden text-white font-bold max-w-4xl mx-auto text-center px-4">
+      <div className="h-screen items-center w-full absolute z-[60] pointer-events-none px-6 md:px-10 flex justify-center flex-col">
+        <div className="text-center max-w-4xl mx-auto">
           <div
-            className={subtitleVisible ? "fade-in-subtitle" : ""}
-            style={{
-              animationDelay: `${titleWords.length * 0.13 + 0.2 + subtitleDelay}s`,
-              opacity: subtitleVisible ? undefined : 0,
-            }}
+            className={`font-geist text-sm md:text-base text-amber-400 font-semibold tracking-widest uppercase mb-4 transition-all duration-700 ${phase >= 1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+          >
+            Казань · КФУ · Открыт с 2025 года
+          </div>
+
+          <div
+            className={`font-orbitron text-2xl md:text-4xl xl:text-5xl font-bold text-white leading-tight mb-1 transition-all duration-700 ${phase >= 2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+          >
+            {titleLine1}
+          </div>
+          <div
+            className={`font-orbitron text-2xl md:text-4xl xl:text-5xl font-bold text-white leading-tight mb-2 transition-all duration-700 delay-100 ${phase >= 2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+          >
+            {titleLine2}
+          </div>
+          <div
+            className={`font-orbitron text-3xl md:text-5xl xl:text-6xl font-extrabold text-amber-400 mb-6 transition-all duration-700 delay-200 ${phase >= 3 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+          >
+            {museumName}
+          </div>
+
+          <div
+            className={`font-geist text-lg md:text-2xl text-blue-100/80 font-light tracking-wide mb-10 transition-all duration-700 ${phase >= 3 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
             {subtitle}
+          </div>
+
+          <div
+            className={`flex flex-col sm:flex-row gap-4 justify-center pointer-events-auto transition-all duration-700 ${phase >= 4 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+          >
+            <Button
+              size="lg"
+              className="bg-amber-500 hover:bg-amber-400 text-[hsl(214,60%,5%)] font-geist font-bold text-lg px-8 pulse-button"
+            >
+              Посетить бесплатно
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white/30 text-white hover:bg-white/10 hover:text-white font-geist text-lg px-8 bg-transparent"
+            >
+              Об экспозиции
+            </Button>
+          </div>
+
+          <div
+            className={`mt-8 flex flex-wrap justify-center gap-6 text-sm text-blue-200/60 font-geist transition-all duration-700 ${phase >= 4 ? "opacity-100" : "opacity-0"}`}
+          >
+            <span>✦ Вход бесплатный</span>
+            <span>✦ Экскурсии бесплатные</span>
+            <span>✦ XII–XXI век</span>
           </div>
         </div>
       </div>
@@ -183,7 +201,7 @@ export const Hero3DWebGL = () => {
           powerPreference: "high-performance",
         }}
         camera={{ position: [0, 0, 1] }}
-        style={{ background: "#000000" }}
+        style={{ background: "hsl(214,60%,5%)" }}
       >
         <Scene />
       </Canvas>
